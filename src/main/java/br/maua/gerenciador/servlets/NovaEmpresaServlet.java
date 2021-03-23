@@ -19,6 +19,8 @@ public class NovaEmpresaServlet extends HttpServlet  {
 	
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// protected void doPost: Suporta somente POST
+		// protected void doGet: Suporta somente GET
 		
 		// Método GET
 		// http://localhost:8080/gerenciador/novaEmpresa?nome=Alura
