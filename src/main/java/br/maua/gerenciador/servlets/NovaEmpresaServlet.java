@@ -20,6 +20,7 @@ public class NovaEmpresaServlet extends HttpServlet  {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// Método GET
 		// http://localhost:8080/gerenciador/novaEmpresa?nome=Alura
 		
 		System.out.println("Cadastrando Nova Empresa");
