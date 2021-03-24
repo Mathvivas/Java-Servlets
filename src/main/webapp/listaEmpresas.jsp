@@ -14,7 +14,7 @@
 		
 	<ul>
 		<c:forEach items="${ empresas }" var="empresa">
-			<li>${ empresa.nome }</li>			<!-- empresa.nome -->
+			<li>${ empresa.nome }</li>			<!-- empresa.getNome() -->
 		</c:forEach>
 	</ul>
 		
