@@ -1,4 +1,4 @@
-package br.maua.gerenciador.servlets;
+package br.maua.gerenciador.modelo;
 
 import java.util.Date;
 
