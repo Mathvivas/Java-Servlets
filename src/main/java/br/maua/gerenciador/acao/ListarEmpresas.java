@@ -13,7 +13,7 @@ import br.maua.gerenciador.modelo.Empresa;
 
 public class ListarEmpresas {
 	
-	public void executar(HttpServletRequest request, HttpServletResponse response) 
+	public String executar(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
 		
 		Banco banco = new Banco();
@@ -21,7 +21,6 @@ public class ListarEmpresas {
 		
 		request.setAttribute("empresas", lista);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas.jsp");
-		rd.forward(request, response);
+		return "forward:listaEmpresas.jsp";
 	}
 }

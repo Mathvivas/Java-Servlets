@@ -13,7 +13,7 @@ import br.maua.gerenciador.modelo.Empresa;
 
 public class MostrarEmpresa {
 	
-	public void executar(HttpServletRequest request, HttpServletResponse response) 
+	public String executar(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
 		
 		System.out.println("mostrando dados da empresa");
@@ -26,7 +26,6 @@ public class MostrarEmpresa {
 		
 		request.setAttribute("empresa", empresa);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/formAlteraEmpresa.jsp");
-		rd.forward(request, response);
+		return "forward:/formAlteraEmpresa.jsp";
 	}
 }

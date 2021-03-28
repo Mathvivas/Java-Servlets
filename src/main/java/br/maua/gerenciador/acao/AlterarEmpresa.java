@@ -16,7 +16,7 @@ import br.maua.gerenciador.modelo.Empresa;
 
 public class AlterarEmpresa {
 	
-	public void executar(HttpServletRequest request, HttpServletResponse response) 
+	public String executar(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
 		
 		String nomeEmpresa = request.getParameter("nome");
@@ -38,6 +38,6 @@ public class AlterarEmpresa {
 		empresa.setNome(nomeEmpresa);
 		empresa.setDataAbertura(dataAbertura);
 		
-		response.sendRedirect("entrada?acao=ListarEmpresas");
+		return "redirect:entrada?acao=ListarEmpresas";
 	}
 }

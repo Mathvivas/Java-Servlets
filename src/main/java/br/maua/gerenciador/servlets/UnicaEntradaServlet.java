@@ -1,6 +1,8 @@
 package br.maua.gerenciador.servlets;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,30 +24,39 @@ public class UnicaEntradaServlet extends HttpServlet {
 		
 		// localhost:8080/gerenciador/entrada?acao=...
 		
+		String nome = null;
 		if ( paramAcao.equals("ListarEmpresas") ) {
 			
 			ListarEmpresas acao = new ListarEmpresas();
-			acao.executar(request, response);
+			nome = acao.executar(request, response);
 		
 		} else if ( paramAcao.equals("RemoverEmpresa") ) {
 			
 			RemoverEmpresa acao = new RemoverEmpresa();
-			acao.executar(request, response);
+			nome = acao.executar(request, response);
 		
 		} else if ( paramAcao.equals("MostrarEmpresa") ) {
 			
 			MostrarEmpresa acao = new MostrarEmpresa();
-			acao.executar(request, response);
+			nome = acao.executar(request, response);
 		
 		} else if ( paramAcao.equals("AlterarEmpresa") ) {
 			
 			AlterarEmpresa acao = new AlterarEmpresa();
-			acao.executar(request, response);
+			nome = acao.executar(request, response);
 			
 		} else if ( paramAcao.equals("NovaEmpresa") ) {
 			
 			NovaEmpresa acao = new NovaEmpresa();
-			acao.executar(request, response);
+			nome = acao.executar(request, response);
+		}
+		
+		String[] tipoEEndereco =  nome.split(":");
+		if ( tipoEEndereco[0].equals("forward") ) {
+			RequestDispatcher rd = request.getRequestDispatcher(tipoEEndereco[1]);
+			rd.forward(request, response);	
+		} else {
+			response.sendRedirect(tipoEEndereco[1]);
 		}
 	}
 

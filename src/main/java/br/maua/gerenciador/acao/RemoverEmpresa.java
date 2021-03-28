@@ -13,7 +13,7 @@ import br.maua.gerenciador.modelo.Empresa;
 
 public class RemoverEmpresa {
 	
-	public void executar(HttpServletRequest request, HttpServletResponse response) 
+	public String executar(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
 		
 		System.out.println("removendo empresa");
@@ -24,6 +24,6 @@ public class RemoverEmpresa {
 		Banco banco = new Banco();
 		banco.removerEmpresa(id);
 		
-		response.sendRedirect("entrada?acao=ListarEmpresas");
+		return "redirect:entrada?acao=ListarEmpresas";
 	}
 }

@@ -16,7 +16,7 @@ import br.maua.gerenciador.modelo.Empresa;
 
 public class NovaEmpresa {
 	
-	public void executar(HttpServletRequest request, HttpServletResponse response) 
+	public String executar(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
 		
 		System.out.println("Cadastrando Nova Empresa");
@@ -42,6 +42,6 @@ public class NovaEmpresa {
 		
 		request.setAttribute("empresa", empresa.getNome());
 		
-		response.sendRedirect("entrada?acao=ListarEmpresas");	// Redirecionamento
+		return "redirect:entrada?acao=ListarEmpresas";
 	}
 }
