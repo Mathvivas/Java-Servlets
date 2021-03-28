@@ -4,6 +4,9 @@
 <%@ page import="java.util.List" %> 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
+<!-- Tomcat não permite o acesso ao diretório WEB-INF -->
+<!-- Não se deve acessar o jsp diretamente. O controlador deve redirecionar para o jsp -->
    
 <!DOCTYPE html>
 <html>
