@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 // Ctrl Espace para opções
 
-@WebServlet( urlPatterns = "/oi")		// Fornece um apelido no endereço URL qu remete ao Servlet do gerenciador
+@WebServlet( urlPatterns = "/oi") // Fornece um apelido no endereço URL qu remete ao Servlet do gerenciador
 public class OiMundoServlets extends HttpServlet {
 	
 	@Override
