@@ -14,7 +14,7 @@ public class MostrarEmpresa implements Acao {
 	public String executar(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
 		
-		System.out.println("mostrando dados da empresa");
+		//System.out.println("mostrando dados da empresa");
 		
 		String paramId = request.getParameter("id");
 		Integer id = Integer.valueOf(paramId);

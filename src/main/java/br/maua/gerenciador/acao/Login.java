@@ -19,13 +19,13 @@ public class Login implements Acao {
 		String login = request.getParameter("login");
 		String senha = request.getParameter("senha");
 		
-		System.out.println("Logando " + login);
+		//System.out.println("Logando " + login);
 		
 		Banco banco = new Banco();
 		Usuario usuario = banco.existeUsuario(login, senha);
 		
 		if ( usuario != null ) {
-			System.out.println("Usuário existe");
+			//System.out.println("Usuário existe");
 			/* 
 			 * Cada requisição é tratada isoladamente, fazendo com que na próxima, 
 			 * já não tenhamos os dados do usuário.
