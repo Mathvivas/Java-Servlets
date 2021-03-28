@@ -26,14 +26,18 @@ public class Login implements Acao {
 		
 		if ( usuario != null ) {
 			System.out.println("Usuário existe");
-			/* Cookies: Arquivo de texto que o servidor pode criar e associar na 
-				resposta. Nas próximas requisições, o navegador poderá enviar esse 
-				arquivo de texto automaticamente. É como uma chave de entrada.
-				Identificação do navegador (e do usuário) -> session ID. 
-				A partir dela, o Tomcat sabe que está se comunicando sempre 
-				com o mesmo navegador e com o mesmo usuário.
-				
-				Guarda informações do usuário
+			/* 
+			 * Cada requisição é tratada isoladamente, fazendo com que na próxima, 
+			 * já não tenhamos os dados do usuário.
+			 * 
+			 *	Cookies: Arquivo de texto que o servidor pode criar e associar na 
+			 *	resposta. Nas próximas requisições, o navegador poderá enviar esse 
+			 *	arquivo de texto automaticamente. É como uma chave de entrada.
+			 *	Identificação do navegador (e do usuário) -> session ID. 
+			 *	A partir dela, o Tomcat sabe que está se comunicando sempre 
+			 *	com o mesmo navegador e com o mesmo usuário.
+			 *	
+			 *	Guarda informações do usuário
 			*/
 			HttpSession sessao = request.getSession();	// Pega o cookie
 			sessao.setAttribute("usuarioLogado", usuario);
