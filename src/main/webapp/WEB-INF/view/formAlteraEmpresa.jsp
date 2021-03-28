@@ -10,6 +10,8 @@
 <title>Adicione Uma Empresa</title>
 </head>
 <body>
+
+	<c:import url="logout-parcial.jsp"/>
 	
 	<!-- http://localhost:8080/gerenciador/novaEmpresa -->
 	<!-- action: Para onde sera enviado o POST -->
