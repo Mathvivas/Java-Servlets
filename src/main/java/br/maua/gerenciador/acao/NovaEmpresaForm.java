@@ -1,6 +1,9 @@
 package br.maua.gerenciador.acao;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -11,21 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 import br.maua.gerenciador.modelo.Banco;
 import br.maua.gerenciador.modelo.Empresa;
 
-public class MostrarEmpresa {
+public class NovaEmpresaForm {
 	
 	public String executar(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
 		
-		System.out.println("mostrando dados da empresa");
-		
-		String paramId = request.getParameter("id");
-		Integer id = Integer.valueOf(paramId);
-		
-		Banco banco = new Banco();
-		Empresa empresa = banco.buscarEmpresaPeloId(id);
-		
-		request.setAttribute("empresa", empresa);
-		
-		return "forward:formAlteraEmpresa.jsp";
+		return "forward:formNovaEmpresa.jsp";
 	}
 }
