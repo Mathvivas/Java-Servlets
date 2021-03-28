@@ -16,11 +16,17 @@
 </head>
 <body>
 
+	Usuário Logado: ${ usuarioLogado.login }
+	
+	<br />
+	<br />
+	<br />
+
 	<c:if test="${ not empty empresa }">
 		Empresa ${ empresa } Cadastrada com sucesso!
 	</c:if>
 		
-		<br />
+	Lista de Empresas:	<br />
 		
 	<ul>
 		<c:forEach items="${ empresas }" var="empresa">

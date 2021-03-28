@@ -19,7 +19,11 @@
 			value="${ empresa.nome }" />
 		Data de Abertura: <input type="text" name="data" 
 			value="<fmt:formatDate value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy"/>" />
+			
+		<!-- ID não pode ser mostrado, não pode ser alterado -->
 		<input type="hidden" name="id" value="${ empresa.id }"/>
+		
+		<!-- A acão deve ser enviada para a Entrada -->
 		<input type="hidden" name="acao" value="AlterarEmpresa"/>
 		<input type="submit">
 	

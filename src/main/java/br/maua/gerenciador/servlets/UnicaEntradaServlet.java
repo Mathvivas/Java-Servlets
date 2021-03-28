@@ -10,12 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.maua.gerenciador.acao.Acao;
-import br.maua.gerenciador.acao.AlterarEmpresa;
-import br.maua.gerenciador.acao.ListarEmpresas;
-import br.maua.gerenciador.acao.MostrarEmpresa;
-import br.maua.gerenciador.acao.NovaEmpresa;
-import br.maua.gerenciador.acao.NovaEmpresaForm;
-import br.maua.gerenciador.acao.RemoverEmpresa;
 
 // Controller
 //localhost:8080/gerenciador/entrada?acao=...
