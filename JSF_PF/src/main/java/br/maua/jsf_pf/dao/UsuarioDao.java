@@ -7,26 +7,26 @@ import javax.persistence.TypedQuery;
 import br.maua.jsf_pf.models.Usuario;
 
 public class UsuarioDao {
-    
+
     public boolean existe(Usuario usuario) {
 
-		EntityManager em = new JPAUtil().getEntityManager();
-		TypedQuery<Usuario> query = em
-				.createQuery(
-						"select u from Usuario u where u.email = :pEmail and u.senha = :pSenha",
-						Usuario.class);
+        EntityManager em = new JPAUtil().getEntityManager();
+        TypedQuery<Usuario> query = em
+                .createQuery(
+                        "select u from Usuario u where u.email = :pEmail and u.senha = :pSenha",
+                        Usuario.class);
 
-		query.setParameter("pEmail", usuario.getEmail());
-		query.setParameter("pSenha", usuario.getSenha());
+        query.setParameter("pEmail", usuario.getEmail());
+        query.setParameter("pSenha", usuario.getSenha());
 
-		try {
-			Usuario resultado = query.getSingleResult();
-		} catch (NoResultException ex) {
-			return false;
-		}
+        try {
+            Usuario resultado = query.getSingleResult();
+        } catch (NoResultException ex) {
+            return false;
+        }
 
-		em.close();
+        em.close();
 
-		return true;
-	}
+        return true;
+    }
 }
