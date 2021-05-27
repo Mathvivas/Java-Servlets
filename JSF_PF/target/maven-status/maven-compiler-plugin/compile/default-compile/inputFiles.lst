@@ -1,0 +1,12 @@
+/home/matheus/Github/Java-Web/JSF_PF/src/main/java/br/maua/jsf_pf/bean/AutorBean.java
+/home/matheus/Github/Java-Web/JSF_PF/src/main/java/br/maua/jsf_pf/bean/LoginBean.java
+/home/matheus/Github/Java-Web/JSF_PF/src/main/java/br/maua/jsf_pf/dao/PopularBanco.java
+/home/matheus/Github/Java-Web/JSF_PF/src/main/java/br/maua/jsf_pf/dao/DAO.java
+/home/matheus/Github/Java-Web/JSF_PF/src/main/java/br/maua/jsf_pf/dao/JPAUtil.java
+/home/matheus/Github/Java-Web/JSF_PF/src/main/java/br/maua/jsf_pf/dao/UsuarioDao.java
+/home/matheus/Github/Java-Web/JSF_PF/src/main/java/br/maua/jsf_pf/util/Autorizador.java
+/home/matheus/Github/Java-Web/JSF_PF/src/main/java/br/maua/jsf_pf/models/Usuario.java
+/home/matheus/Github/Java-Web/JSF_PF/src/main/java/br/maua/jsf_pf/models/Livro.java
+/home/matheus/Github/Java-Web/JSF_PF/src/main/java/br/maua/jsf_pf/util/LogPhaseListener.java
+/home/matheus/Github/Java-Web/JSF_PF/src/main/java/br/maua/jsf_pf/bean/LivroBean.java
+/home/matheus/Github/Java-Web/JSF_PF/src/main/java/br/maua/jsf_pf/models/Autor.java

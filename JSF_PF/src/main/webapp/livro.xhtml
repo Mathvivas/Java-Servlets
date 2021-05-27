@@ -9,7 +9,7 @@
 
         <f:metadata>
             <f:viewParam name="livroId" value="#{livroBean.livroId}"/>
-            <f:viewAction action="#{livroBean.carregarLivroPelaId}"/>
+            <f:viewAction action="#{livroBean.carregarLivroPelaId}" rendered="#{param.livroId != null}" />
         </f:metadata>
 
         <ui:define name="titulo">
