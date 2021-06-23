@@ -20,12 +20,13 @@
                 </h:form>
             </h:panelGrid>
 
-            <p:growl id="messages" showDetail="true" />
+            <p:growl id="messages" showDetail="true" autoUpdate="true"/>
 
             <h:form rendered="#{usuarioLogado != null}">	
                 <p:menuButton value="Menu">
                     <p:menuitem value="Livros" action="livro?faces-redirect=true" icon="fa fa-fw fa-edit" />
                     <p:menuitem value="Autores" action="autor?faces-redirect=true" icon="fa fa-fw fa-edit" />
+                    <p:menuitem value="Vendas" action="vendas?faces-redirect=true" icon="fa fa-fw fa-image" />
                     <p:separator />
                     <p:menuitem value="Logout" action="#{loginBean.deslogar}" icon="fa fa-fw fa-sign-out" />
                 </p:menuButton>
