@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Formulario</title>
-</head>
+<head th:replace="~{base :: head('Formulário')}"></head>
 <body>
+    <div th:replace="~{base :: logo}"></div>
     <div class="container">
-        <div class="jumbotron mb-0">
-            <h1 class="display-4">Novo Pedido</h1>
-        </div>
+        <div th:replace="~{base :: titulo('Novo Pedido')}"></div>
         <div class="card mt-3">
             <form th:object="${requisicaoNovoPedido}" class="card-body" action="/pedido/novo" method="post">
 
