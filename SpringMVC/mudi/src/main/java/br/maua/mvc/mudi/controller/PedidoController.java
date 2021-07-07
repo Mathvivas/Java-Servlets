@@ -34,6 +34,6 @@ public class PedidoController {
         Pedido pedido = req.toPedido();
         pedidoRepository.save(pedido);      // Salvo no banco de dados
 
-        return "pedido/formulario";
+        return "redirect:/home";
     }
 }

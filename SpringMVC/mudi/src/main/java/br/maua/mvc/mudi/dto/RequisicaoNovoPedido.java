@@ -1,6 +1,7 @@
 package br.maua.mvc.mudi.dto;
 
 import br.maua.mvc.mudi.model.Pedido;
+import br.maua.mvc.mudi.model.StatusPedido;
 
 import javax.validation.constraints.NotBlank;
 
@@ -54,6 +55,7 @@ public class RequisicaoNovoPedido {
         pedido.setUrlProduto(urlProduto);
         pedido.setUrlImagem(urlImagem);
         pedido.setNomeProduto(nomeProduto);
+        pedido.setStatus(StatusPedido.AGUARDANDO);
         return pedido;
     }
 }
