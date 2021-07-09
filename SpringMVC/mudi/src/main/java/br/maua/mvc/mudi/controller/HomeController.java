@@ -24,8 +24,7 @@ public class HomeController {
 
     @GetMapping
     public String home(Model model) {
-
-        List<Pedido> pedidos = pedidoRepository.findAll();
+        List<Pedido> pedidos = pedidoRepository.findByStatus(StatusPedido.ENTREGUE);
         model.addAttribute("pedidos", pedidos);
         return "home";
     }
