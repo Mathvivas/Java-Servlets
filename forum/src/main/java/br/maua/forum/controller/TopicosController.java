@@ -1,22 +1,30 @@
 package br.maua.forum.controller;
 
 import br.maua.forum.controller.dto.TopicoDTO;
-import br.maua.forum.modelo.Curso;
 import br.maua.forum.modelo.Topico;
+import br.maua.forum.repository.TopicoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Arrays;
 import java.util.List;
 
 @RestController     // Por padrão, métodos possuem ResponseBody
 public class TopicosController {
 
-    @RequestMapping("/topicos")
-    public List<TopicoDTO> lista() {
-        Topico topico = new Topico("Dúvida", "Dúvida com Spring", new Curso("Spring", "Programação"));
+    @Autowired
+    private TopicoRepository topicoRepository;
 
-        // Passa objetos e retorna uma lista com esses objetos
-        return TopicoDTO.converter(Arrays.asList(topico, topico, topico));
+    @RequestMapping("/topicos")
+    public List<TopicoDTO> listar(String nomeCurso) {
+        if ( nomeCurso == null ) {
+            List<Topico> topicos = topicoRepository.findAll();
+            // Passa objetos e retorna uma lista com esses objetos
+            return TopicoDTO.converter(topicos);
+        } else {
+            // localhost:8080/topicos?nomeCurso=Spring+Boot
+            List<Topico> topicos = topicoRepository.findByCursoNome(nomeCurso);
+            return TopicoDTO.converter(topicos);
+        }
     }
 }
