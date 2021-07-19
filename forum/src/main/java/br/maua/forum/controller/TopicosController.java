@@ -1,5 +1,6 @@
 package br.maua.forum.controller;
 
+import br.maua.forum.controller.dto.DetalhesDoTopicoDTO;
 import br.maua.forum.controller.dto.TopicoDTO;
 import br.maua.forum.controller.form.TopicoForm;
 import br.maua.forum.modelo.Topico;
@@ -45,5 +46,11 @@ public class TopicosController {
 
         URI uri = uriBuilder.path("/topicos/{id}").buildAndExpand(topico.getId()).toUri();
         return ResponseEntity.created(uri).body(new TopicoDTO(topico));
+    }
+
+    @GetMapping("/{id}")
+    public DetalhesDoTopicoDTO detalhar(@PathVariable Long id) {
+        Topico topico = topicoRepository.getById(id);
+        return new DetalhesDoTopicoDTO(topico);
     }
 }
