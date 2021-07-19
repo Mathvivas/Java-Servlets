@@ -6,8 +6,12 @@ import br.maua.forum.modelo.Topico;
 import br.maua.forum.repository.CursoRepository;
 import br.maua.forum.repository.TopicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.validation.Valid;
+import java.net.URI;
 import java.util.List;
 
 @RestController     // Por padrão, métodos possuem ResponseBody
@@ -35,8 +39,11 @@ public class TopicosController {
 
     @PostMapping
     // RequestBody pegará no corpo, não na URL
-    public void cadastrar(@RequestBody TopicoForm form) {
+    public ResponseEntity<TopicoDTO> cadastrar(@RequestBody @Valid TopicoForm form, UriComponentsBuilder uriBuilder) {
         Topico topico = form.converter(cursoRepository);
         topicoRepository.save(topico);
+
+        URI uri = uriBuilder.path("/topicos/{id}").buildAndExpand(topico.getId()).toUri();
+        return ResponseEntity.created(uri).body(new TopicoDTO(topico));
     }
 }
