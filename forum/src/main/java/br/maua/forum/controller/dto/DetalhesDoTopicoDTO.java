@@ -28,4 +28,32 @@ public class DetalhesDoTopicoDTO {
         this.respostas = new ArrayList<>();
         this.respostas.addAll(topico.getRespostas().stream().map(RespostaDTO::new).collect(Collectors.toList()));
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getMensagem() {
+        return mensagem;
+    }
+
+    public LocalDateTime getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public String getNomeAutor() {
+        return nomeAutor;
+    }
+
+    public StatusTopico getStatus() {
+        return status;
+    }
+
+    public List<RespostaDTO> getRespostas() {
+        return respostas;
+    }
 }
