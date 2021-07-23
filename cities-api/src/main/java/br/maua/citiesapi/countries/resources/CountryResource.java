@@ -1,4 +1,4 @@
-package br.maua.citiesapi;
+package br.maua.citiesapi.countries.resources;
 
 import br.maua.citiesapi.countries.entities.Country;
 import br.maua.citiesapi.countries.repositories.CountryRepository;
